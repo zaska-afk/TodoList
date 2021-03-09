@@ -62,17 +62,24 @@ Deleting a Todo:
 2. Pass the `deleteTodo` function as a prop to the `TodoList` component. Then pass `props.deleteTodo` as a prop to the `TodoItem` component.
 3. set the onClick for the "destroy" button inside of `TodoItem.js` to the `props.deleteTodo` function which was passed down from `App.js`. Make sure you pass both the `event` and the correct `todoId` to `props.toggleComplete`
 
+Clear Complete:
+1. create a clearComplete function which removes all completed todos from the todos array in state.
+2. pass the clearComplete function as a prop to the Footer component.
+3. set the props.clearComplete function as the onClick attribute for the clear completed button in the footer.
+
 ## Add Routing and Filtering
 
-1. Inside `index.js`, import the `BrowserRouter` component from `'react-router-dom'`, then wrap the `App` component in a `BrowserRouter` component. For example:
+1. run `npm install react-router-dom`
+2. Inside `index.js`, import the `BrowserRouter` component from `'react-router-dom'`, then wrap the `App` component in a `BrowserRouter` component. For example:
 ```
 <BrowserRouter>
  <App/>
 </BrowserRouter>
 ```
-2. Update the anchor tags in `Footer.js` to be `Link` components from `react-router-dom`.
-3. Update `App.js` so that it contains the routes necessary to create filtered views of the todo list as shown below.
-4. On the routes for the filtered views, when passing the todos into the `TodoList` component add a filter which filters the todos based on their `completed` property.
+3. Update the anchor tags in `Footer.js` to be `Link` components from `react-router-dom`.
+4. Update `App.js` so that it contains the routes necessary to create filtered views of the todo list as shown below.
+5. On the routes for the filtered views, when passing the todos into the `TodoList` component add a filter which filters the todos based on their `completed` property.
+6. Add the functionality required for the "items left" counter to show the number of the todos that are not completed.
 
 ## Example Output
 
