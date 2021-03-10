@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import todosList from "./todos.json";
 
@@ -20,13 +21,11 @@ function App() {
     setState(inputText);
     console.log(state);
   };
-  // doggie speed dating for event listener and keydown and look at the function for set todos
 
   const keypress = (e) => {
     // console.log(e.key);
     if (e.key === "Enter") {
-      // console.log(state);
-
+      //unique key id
       const todoText = uuidv4();
 
       const todo = {
@@ -35,27 +34,59 @@ function App() {
         id: todoText,
       };
 
-      const newTodo = [...todos];
-      newTodo[todoText] = todo;
-      setTodos(newTodo);
-      console.log(todo);
+      setTodos((todos) => [...todos, todo]);
+      //empty the input field
+      setState("");
+      console.log(state, "state");
     }
   };
 
   useEffect(() => {
     window.addEventListener("keydown", keypress);
     return () => {
+      //clears event listener as to not double the keypress
       window.removeEventListener("keydown", keypress);
     };
-  }, [todos]);
+  });
 
   //############### PART TWO #############
+  // Marking a todo as completed
 
-  // function toggleComplete() {}
+  // function toggleComplete(event, todoId) {}
+
+  const toggleComplete = (event, todoId) => {
+    setTodos((todos) => {
+      return todos.map((todo) => {
+        if (todo.id === todoId) {
+          let markedTodo = { ...todo };
+          markedTodo.completed = !markedTodo.completed;
+          return markedTodo;
+        }
+        return todo;
+      });
+    });
+  };
 
   //############### PART THREE #############
+  //deleting todos by filtering
+  const deleteTodo = (event, todoId) => {
+    setTodos((todos) => {
+      return todos.filter((todo) => {
+        return todo.id !== todoId;
+      });
+    });
+  };
 
-  // function deleteTodo() {}
+  //  ######### Clear Complete #####
+  //deletes checked todos
+
+  const clearComplete = () => {
+    setTodos((todos) => {
+      return todos.filter((todo) => {
+        return !todo.completed;
+      });
+    });
+  };
 
   return (
     <section className="todoapp">
@@ -63,46 +94,47 @@ function App() {
         <h1>todos</h1>
         <input
           onChange={onChange}
+          //empties input field after pressing enter
+          value={state}
           className="new-todo"
           placeholder="What needs to be done?"
-          autofocus
+          autoFocus
         />
       </header>
-      <TodoList todos={todos} />
-      <Footer />
+      <Switch>
+        {/* //link to active still active todos */}
+        <Route path="/active">
+          <TodoList
+            todos={todos.filter((item) => {
+              return item.completed === false;
+            })}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+          />
+        </Route>
+        {/* //link to completed todos */}
+        <Route path="/completed">
+          <TodoList
+            todos={todos.filter((item) => {
+              return item.completed === true;
+            })}
+            toggleComplete={toggleComplete}
+            deleteTodo={deleteTodo}
+          />
+        </Route>
+
+        <TodoList
+          todos={todos}
+          toggleComplete={toggleComplete}
+          deleteTodo={deleteTodo}
+        />
+      </Switch>
+      <Footer
+        clearComplete={clearComplete}
+        todo={todos.filter((todo) => todo.completed === false).length}
+      />
     </section>
   );
 }
-
-// // Hook
-// function useKeyPress(targetKey) {
-//   // State for keeping track of whether key is pressed
-//   const [keyPressed, setKeyPressed] = useState(false);
-
-//   // If pressed key is our target key then set to true
-//   function downHandler({ key }) {
-//     if (key === targetKey) {
-//       setKeyPressed(true);
-//     }
-//   }
-
-//   // If released key is our target key then set to false
-//   const upHandler = ({ key }) => {
-//     if (key === targetKey) {
-//       setKeyPressed(false);
-//     }
-//   };
-
-// useEffect(() => {
-//   window.addEventListener('keydown', downHandler);
-
-//   // Remove event listeners on cleanup
-//   return () => {
-//     window.removeEventListener('keydown', downHandler);
-
-//   };
-// }, []);
-
-// return keyPressed;
 
 export default App;

@@ -69,6 +69,12 @@ Deleting a Todo:
 2. Pass the `deleteTodo` function as a prop to the `TodoList` component. Then pass `props.deleteTodo` as a prop to the `TodoItem` component.
 3. set the onClick for the "destroy" button inside of `TodoItem.js` to the `props.deleteTodo` function which was passed down from `App.js`. Make sure you pass both the `event` and the correct `todoId` to `props.toggleComplete`
 
+Clear Complete:
+
+create a clearComplete function which removes all completed todos from the todos array in state.
+pass the clearComplete function as a prop to the Footer component.
+set the props.clearComplete function as the onClick attribute for the clear completed button in the footer.
+
 ## Add Routing and Filtering
 
 1. Inside `index.js`, import the `BrowserRouter` component from `'react-router-dom'`, then wrap the `App` component in a `BrowserRouter` component. For example:
@@ -98,9 +104,11 @@ Deleting a Todo:
 
 # Credits and References
 
-Author:
+Author: Zachary Balaska
 
 References:
+
+With assistance from fellow student Eric Hoover, coach Manny Ledoux, Associate instructor TJ Hindman, and Facillitator Meagan Ramey
 
 [Medium] - (https://medium.com/the-andela-way/handling-user-input-in-react-crud-1396e51a70bf)
 
@@ -108,4 +116,6 @@ References:
 
 [stackOverflow] - (https://stackoverflow.com/questions/5418313/how-to-differentiate-between-enter-and-return-keys-in-javascript)
 
-[npmjs ](https://www.npmjs.com/package/uuidv4)
+[npmjs]- (https://www.npmjs.com/package/uuidv4)
+
+[youtube] - (https://www.youtube.com/watch?v=hQAHSlTtcmY)

@@ -5,10 +5,14 @@ function TodoItem(props) {
         <input
           className="toggle"
           type="checkbox"
+          onClick={(event) => props.toggleComplete(event, props.id)}
           checked={props.completed}
         />
         <label>{props.title}</label>
-        <button className="destroy" />
+        <button
+          className="destroy"
+          onClick={(event) => props.deleteTodo(event, props.id)}
+        />
       </div>
     </li>
   );
