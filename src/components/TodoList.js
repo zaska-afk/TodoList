@@ -1,6 +1,9 @@
 import TodoItem from "./TodoItem";
+import { ACTIONS, dispatcher } from "../App";
+import { useContext } from "react";
 
 function TodoList(props) {
+  let dispatch = useContext(dispatcher);
   return (
     <section className="main">
       <ul className="todo-list">
@@ -9,8 +12,17 @@ function TodoList(props) {
             title={todo.title}
             completed={todo.completed}
             id={todo.id}
-            toggleComplete={props.toggleComplete}
-            deleteTodo={props.deleteTodo}
+            // toggleComplete={props.toggleComplete}
+            toggleComplete={() =>
+              dispatch({
+                type: ACTIONS.TOGGLECOMPLETE,
+                payload: { id: props.id },
+              })
+            }
+            // deleteTodo={props.deleteTodo}
+            deleteTodo={() =>
+              dispatch({ type: ACTIONS.DELETETODO, payload: { id: props.id } })
+            }
             key={todo.id}
           />
         ))}

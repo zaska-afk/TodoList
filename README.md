@@ -106,7 +106,7 @@ set the props.clearComplete function as the onClick attribute for the clear comp
 
 Author: Zachary Balaska
 
-References:
+References: Kenzie Demos and content,
 
 With assistance from fellow student Eric Hoover, coach Manny Ledoux, Associate instructor TJ Hindman, and Facillitator Meagan Ramey
 

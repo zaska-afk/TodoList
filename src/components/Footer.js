@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-import TodoList from "./TodoList";
+// import TodoList from "./TodoList";
+import { ACTIONS, dispatcher } from "../App";
+import { useContext } from "react";
 
 function Footer(props) {
+  let count = props.todo.filter((todo) => !todo.completed);
+  let dispatch = useContext(dispatcher);
   return (
     <footer className="footer">
       <span className="todo-count">
-        <strong>{props.todo}</strong> item(s) left
+        <strong>{count.length}</strong> item(s) left
       </span>
       <ul className="filters">
         <li>
@@ -18,7 +22,10 @@ function Footer(props) {
           <Link to="/completed">Completed</Link>
         </li>
       </ul>
-      <button className="clear-completed" onClick={props.clearComplete}>
+      <button
+        className="clear-completed"
+        onClick={() => dispatch({ type: ACTIONS.CLEARCOMPLETE })}
+      >
         Clear completed
       </button>
     </footer>
