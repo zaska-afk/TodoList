@@ -58,7 +58,7 @@ function reducer(state, action) {
 }
 
 function newTodo(name) {
-  return { id: Date.now(), title: name, complete: false };
+  return { id: Date.now(), title: name, completed: false };
 }
 
 function App() {
