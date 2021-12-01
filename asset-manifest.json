@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/TodoList/tree/dev-revisit/static/css/main.29cf824e.chunk.css",
-    "main.js": "/TodoList/tree/dev-revisit/static/js/main.45114cdb.chunk.js",
-    "main.js.map": "/TodoList/tree/dev-revisit/static/js/main.45114cdb.chunk.js.map",
-    "runtime-main.js": "/TodoList/tree/dev-revisit/static/js/runtime-main.36ce4d5f.js",
-    "runtime-main.js.map": "/TodoList/tree/dev-revisit/static/js/runtime-main.36ce4d5f.js.map",
-    "static/js/2.6baf8670.chunk.js": "/TodoList/tree/dev-revisit/static/js/2.6baf8670.chunk.js",
-    "static/js/2.6baf8670.chunk.js.map": "/TodoList/tree/dev-revisit/static/js/2.6baf8670.chunk.js.map",
-    "static/js/3.2e038083.chunk.js": "/TodoList/tree/dev-revisit/static/js/3.2e038083.chunk.js",
-    "static/js/3.2e038083.chunk.js.map": "/TodoList/tree/dev-revisit/static/js/3.2e038083.chunk.js.map",
-    "index.html": "/TodoList/tree/dev-revisit/index.html",
-    "static/css/main.29cf824e.chunk.css.map": "/TodoList/tree/dev-revisit/static/css/main.29cf824e.chunk.css.map",
-    "static/js/2.6baf8670.chunk.js.LICENSE.txt": "/TodoList/tree/dev-revisit/static/js/2.6baf8670.chunk.js.LICENSE.txt"
+    "main.css": "/TodoList/static/css/main.29cf824e.chunk.css",
+    "main.js": "/TodoList/static/js/main.45114cdb.chunk.js",
+    "main.js.map": "/TodoList/static/js/main.45114cdb.chunk.js.map",
+    "runtime-main.js": "/TodoList/static/js/runtime-main.3a9b6374.js",
+    "runtime-main.js.map": "/TodoList/static/js/runtime-main.3a9b6374.js.map",
+    "static/js/2.6baf8670.chunk.js": "/TodoList/static/js/2.6baf8670.chunk.js",
+    "static/js/2.6baf8670.chunk.js.map": "/TodoList/static/js/2.6baf8670.chunk.js.map",
+    "static/js/3.2e038083.chunk.js": "/TodoList/static/js/3.2e038083.chunk.js",
+    "static/js/3.2e038083.chunk.js.map": "/TodoList/static/js/3.2e038083.chunk.js.map",
+    "index.html": "/TodoList/index.html",
+    "static/css/main.29cf824e.chunk.css.map": "/TodoList/static/css/main.29cf824e.chunk.css.map",
+    "static/js/2.6baf8670.chunk.js.LICENSE.txt": "/TodoList/static/js/2.6baf8670.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.36ce4d5f.js",
+    "static/js/runtime-main.3a9b6374.js",
     "static/js/2.6baf8670.chunk.js",
     "static/css/main.29cf824e.chunk.css",
     "static/js/main.45114cdb.chunk.js"
