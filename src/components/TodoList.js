@@ -12,14 +12,12 @@ function TodoList(props) {
             title={todo.title}
             completed={todo.completed}
             id={todo.id}
-            // toggleComplete={props.toggleComplete}
             toggleComplete={() =>
               dispatch({
                 type: ACTIONS.TOGGLECOMPLETE,
                 payload: { id: props.id },
               })
             }
-            // deleteTodo={props.deleteTodo}
             deleteTodo={() =>
               dispatch({ type: ACTIONS.DELETETODO, payload: { id: props.id } })
             }

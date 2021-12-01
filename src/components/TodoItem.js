@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ACTIONS, dispatcher } from "../App";
-// import TodoList from "./TodoList";
 
 function TodoItem(props) {
   let dispatch = useContext(dispatcher);
@@ -10,7 +9,6 @@ function TodoItem(props) {
         <input
           className="toggle"
           type="checkbox"
-          // onClick={(event) => props.toggleComplete(event, props.id)}
           onClick={() =>
             dispatch({
               type: ACTIONS.TOGGLECOMPLETE,
@@ -22,7 +20,6 @@ function TodoItem(props) {
         <label>{props.title}</label>
         <button
           className="destroy"
-          // onClick={(event) => props.deleteTodo(event, props.id)}
           onClick={() =>
             dispatch({ type: ACTIONS.DELETETODO, payload: { id: props.id } })
           }
